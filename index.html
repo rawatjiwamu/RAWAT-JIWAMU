@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rawat Jiwamu</title>
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <img src="profil.jpg" alt="Foto Profil" class="profile-img">
+    <h1>Rawat Jiwamu</h1>
+    <p class="bio">Sesi deep talk untuk menyembuhkan luka batin dan trauma masa lalu.</p>
+
+    <div class="links">
+      <a href="https://wa.me/6285165902437" class="link-btn">📞 WA Admin</a>
+      <a href="catalog.html" class="link-btn">📄 Catalog / Rate Card</a>
+      <a href="#form" class="link-btn">📝 Isi Form Pemesanan</a>
+    </div>
+
+    <form id="form" class="form">
+      <h2>Form Pemesanan</h2>
+      <input type="text" id="nama" placeholder="Nama Lengkap" required>
+      <input type="text" id="instagram" placeholder="Nama Instagram" required>
+      <input type="text" id="sumber" placeholder="Dapat informasi dari mana/dari siapa?" required>
+      <input type="text" id="ttl" placeholder="Tempat, Tanggal Lahir" required>
+      <input type="text" id="durasi" placeholder="Sesi durasi yang akan dijalani (jam)" required>
+      <textarea id="keluhan" placeholder="Alasan/keluhan yang ingin dibahas" required></textarea>
+      <textarea id="harapan" placeholder="Harapan ikut sesi" required></textarea>
+      <button type="button" onclick="kirimWA()">Kirim via WhatsApp</button>
+    </form>
+  </div>
+
+  <script>
+    function kirimWA() {
+      const nama = document.getElementById('nama').value;
+      const ig = document.getElementById('instagram').value;
+      const sumber = document.getElementById('sumber').value;
+      const ttl = document.getElementById('ttl').value;
+      const durasi = document.getElementById('durasi').value;
+      const keluhan = document.getElementById('keluhan').value;
+      const harapan = document.getElementById('harapan').value;
+
+      const pesan = `Halo Admin,%0ASaya ingin memesan sesi.%0A%0A` +
+                    `Nama: ${nama}%0A` +
+                    `Instagram: ${ig}%0A` +
+                    `Sumber Info: ${sumber}%0A` +
+                    `TTL: ${ttl}%0A` +
+                    `Durasi: ${durasi} jam%0A` +
+                    `Keluhan: ${keluhan}%0A` +
+                    `Harapan: ${harapan}`;
+      window.open(`https://wa.me/6285165902437?text=${pesan}`, '_blank');
+    }
+  </script>
+
+  <audio autoplay loop>
+    <source src="just-relax.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung pemutar audio.
+  </audio>
+</body>
+</html>
